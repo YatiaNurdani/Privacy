@@ -29,9 +29,15 @@ class MyApp extends StatelessWidget{
   }
 }
 
-class HomePage extends StatelessWidget{
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage>{
 
   var _value = false;
+  var _valuee = false;
 
   @override
   Widget build(BuildContext context) {
@@ -98,6 +104,9 @@ class HomePage extends StatelessWidget{
             children: [
               SwitchListTile(value: _value, onChanged: (value){
                 _value = value;
+                setState(() {
+                  _value = value;
+                });
               },
                 activeColor: Colors.white,
                 activeTrackColor: Color(0xff129789),
@@ -115,8 +124,11 @@ class HomePage extends StatelessWidget{
           margin: EdgeInsets.only(top: 490),
           child: Column(
             children: [
-              SwitchListTile(value: _value, onChanged: (value){
-                _value = value;
+              SwitchListTile(value: _valuee, onChanged: (value){
+                _valuee = value;
+                setState(() {
+                  _valuee = value;
+                });
               },
                 activeColor: Colors.white,
                 activeTrackColor: Color(0xff129789),
